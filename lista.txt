@@ -1,0 +1,23 @@
+Resultados com avaliação      (Formulário aplicados)
+https://api-analytics.checklistfacil.com.br/v1/evaluations/results
+
+Checklists - Listar    (Nome dos formulários)
+https://api-analytics.checklistfacil.com.br/v1/checklists
+
+Plano de Ação - Listar  (Plano de ações gerados apartir deum formulário)
+https://api-analytics.checklistfacil.com.br/v1/action-plans
+
+Itens - Listar (Pergunta dos formulários aplicados)
+
+Unidades - Listar (Unidade dos formulários aplicados)
+https://api-analytics.checklistfacil.com.br/v1/units
+
+Tipos de Unidade - Listar (Tipo das unidades dos formulários aplicados)
+https://api-analytics.checklistfacil.com.br/v1/unit-types
+
+Produto - Listar (Lista dos produtos selecionados nos formulários aplicados)
+https://api-analytics.checklistfacil.com.br/v1/products
+
+Categoria de Produto - Listar (Categoria dos produtos dos formulários aplicados)
+https://api-analytics.checklistfacil.com.br/v1/product-categories
+
