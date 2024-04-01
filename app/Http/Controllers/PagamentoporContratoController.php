@@ -42,6 +42,7 @@ class PagamentoporContratoController extends Controller
        
         return view('financeiros.controle_pagamento', compact('contratos', 'produtos','unidades','vendedors','clientes'));
     }
+    
     public function controleporcontrato($id)
     {
         //$contratos = Contrato::leftJoin('regra_por_contratos', 'contratos.id', '=', 'regra_por_contratos.id_contrato')

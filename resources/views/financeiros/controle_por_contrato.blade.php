@@ -1,4 +1,4 @@
-@extends('layouts.menu')
+@extends('layouts.menu_financeiro')
 @section('conteudo')
 <div class="">
     <div class="">

@@ -112,6 +112,7 @@ class ContratoController extends Controller
         $regraPorContrato->id_contrato= $id_contrato;
         $regraPorContrato->id_regra= $Idregra;
         $regraPorContrato->id_vendedor= $contrato->id_vendedor;
+        $regraPorContrato->id_lider=$id_lider;
         $regraPorContrato->permissao_comissao=$status_comissao;
         $regraPorContrato->save();
 

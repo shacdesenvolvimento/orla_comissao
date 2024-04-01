@@ -79,6 +79,7 @@ Route::get('/comissaoporpagamento',[ComissaoporContratoController::class,'index'
 Route::get('/controleporcontrato/{id}',[PagamentoporContratoController::class,'controleporcontrato'])->name('controleporcontrato.show');
 Route::post('/controleporcontrato/inserir',[PagamentoporContratoController::class,'store'])->name('inserir.controleporcontrato');
 
+
 //CONTROLE VENDEDOR
 Route::get('/pagarvendedor',[ComissaoPagarVendedorController::class,'index'])->name('pagarvendedor');
 Route::post('/pagarvendedor/update',[ComissaoPagarVendedorController::class,'update'])->name('pagarvendedor.update');
