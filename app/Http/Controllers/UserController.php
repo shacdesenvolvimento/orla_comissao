@@ -50,6 +50,8 @@ class UserController extends Controller
         $contato= $request->contato;
         $perc_comissao= $request->perc_comissao;
 
+    //dd($request);
+
         $funcionario= User::create(
             [
                 'nome'=>$nome,
@@ -61,7 +63,7 @@ class UserController extends Controller
             ]
         );
         $IdVendedorAtual = $funcionario->id;
-        if($cargo==2 && $lider==1 ){
+        if($cargo==2 ){
             $vendedorPorlider= VendedorPorLiderr::create([
                 'id_lider'=>$lider, 
                 'id_vendedor'=> $IdVendedorAtual,

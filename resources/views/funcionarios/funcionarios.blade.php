@@ -44,7 +44,7 @@ $teste='teste';
                 
             
           <tr>
-            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$item->id}}</strong>
+            <td><strong>{{$item->id}}</strong>
           </td>     
             <td>{{$item->nome}}</td>  
             <td>{{$item->cargo->nome}}</td>  
