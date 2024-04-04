@@ -22,6 +22,8 @@ class CreateComissaoPagarVendedorsTable extends Migration
             $table->unsignedBigInteger('id_lider')->nullable();
             $table->string('valor_comissao_atual');
             $table->string('status');
+            $table->date('data_liberacao');
+            
             $table->foreign('id_pagamentopor_contratos')->references('id')->on('pagamentopor_contratos');
             $table->foreign('id_contrato')->references('id')->on('contratos');
             $table->foreign('id_vendedor')->references('id')->on('users');

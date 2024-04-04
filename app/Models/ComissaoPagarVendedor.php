@@ -14,6 +14,7 @@ class ComissaoPagarVendedor extends Model
         'id_vendedor',
         'id_lider',
         'valor_comissao_atual',
+        'data_liberacao',
         'status'
     ];
     public function vendedor(){

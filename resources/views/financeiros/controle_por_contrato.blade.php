@@ -255,6 +255,11 @@
                 <span>R$</span>
                 <input type="number" id="valor_parcela" name="valor_parcela" step="0.01" min="0" placeholder="0.00" class="form-control" required>
               </div>
+              <div class="col-md">
+                <label for="defaultSelect" class="form-label">Data Pagamento</label>
+                <span>R$</span>
+                <input type="date" id="data_pagamento" name="data_pagamento" step="0.01" min="0" placeholder="0.00" class="form-control" required>
+              </div>
             </div>
             </p>
             

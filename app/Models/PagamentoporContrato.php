@@ -16,6 +16,7 @@ class PagamentoporContrato extends Model
         'valor_parcela',
         'total_atual',
         'quant_parcela_atual',
+        'data_pagamento',
         'created_at',
         'updated_at'
     ];

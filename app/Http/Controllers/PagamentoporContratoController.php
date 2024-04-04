@@ -16,6 +16,7 @@ use App\Models\ComissaoPagarVendedor;
 use App\Models\ComissaoPagarLider;
 use App\Models\ComissaoporContrato;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class PagamentoporContratoController extends Controller
 {
@@ -116,6 +117,9 @@ class PagamentoporContratoController extends Controller
        $valor_parcela= $request->input('valor_parcela');
        $id_vendedor= $request->input('id_vendedor');
        $id_lider= $request->input('id_lider');
+       //$data_pagamento=date('Y-m-d', strtotime($request->input('data_pagamento'))) ;
+       $data_pagamento = Carbon::parse($request->input('data_pagamento'))->toDateString();
+       
 
        $quantParcela = PagamentoporContrato::where('id_contrato', $id_contrato)->count();
        
@@ -143,6 +147,8 @@ class PagamentoporContratoController extends Controller
        $pagamentoporcontrato->id_vendedor = $request->input('id_vendedor');
        $pagamentoporcontrato->id_lider = $request->input('id_lider');
        $pagamentoporcontrato->valor_parcela = $request->input('valor_parcela');
+       $pagamentoporcontrato->data_pagamento = $data_pagamento;
+       
        $pagamentoporcontrato->quant_parcela_atual = $quantParcelaAtual;
        $pagamentoporcontrato->total_atual = $total_atual;
        $pagamentoporcontrato->save();
@@ -158,12 +164,13 @@ class PagamentoporContratoController extends Controller
         
         $comissao_pagar_vendedor= new ComissaoPagarVendedor;
 
-
+        
         $comissao_pagar_vendedor->id_pagamentopor_contratos= $id_agamentoporcontrato;
         $comissao_pagar_vendedor->id_contrato= $id_contrato;
         $comissao_pagar_vendedor->id_vendedor= $id_vendedor;
         $comissao_pagar_vendedor->valor_comissao_atual= $valoreceberVendedor;
         $comissao_pagar_vendedor->status= 'pendente';
+        $comissao_pagar_vendedor->data_liberacao= $data_pagamento;
         $comissao_pagar_vendedor->save();
 
        }
@@ -185,6 +192,7 @@ class PagamentoporContratoController extends Controller
         $comissao_pagar_lider->id_lider= $id_lider;
         $comissao_pagar_lider->valor_comissao_atual= $valoreceberVendedor;
         $comissao_pagar_lider->status= 'pendente';
+        $comissao_pagar_lider->data_liberacao= $data_pagamento;
         $comissao_pagar_lider->save();
        }
 

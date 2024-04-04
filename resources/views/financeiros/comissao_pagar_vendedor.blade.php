@@ -1,6 +1,10 @@
 
 @extends('layouts.menu')
 @section('conteudo')
+
+
+
+
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.1/css/buttons.dataTables.css" />
 
@@ -32,6 +36,7 @@
             <th>Vendedor<br><input type="text" class="form-control column_search" id="colSearch_vendedor"></th>
             <th>Valor receber<br><input type="text" class="form-control column_search" id="colSearch_valor_receber"></th>
             <th>Status<br><input type="text" class="form-control column_search" id="colSearch_status"></th>
+            <th>Data Liberação<br><input type="text" class="form-control column_search" id="colSearch_data_liberacao"></th>
             <th>Ações</th>
           </tr>
       </thead>
@@ -41,7 +46,9 @@
               <td style="text-align: center">{{$item->id_contrato}}</td>      
               <td>{{$item->vendedor->nome}}</td>  
               <td>{{$item->valor_comissao_atual}}</td>  
-              <td>{{$item->status}}</td>                    
+              <td>{{$item->status}}</td>      
+             {{--  <td>{{ date('d-m-Y', strtotime($item->data_liberacao)) }}</td>    --}}    
+             <td>{{ date('d \d\e F \d\e Y', strtotime($item->data_liberacao)) }}</td>         
               <td>
                 <div class="dropdown">
                   <form method="POST" action="{{ route('pagarvendedor.update') }}">
@@ -71,6 +78,7 @@
             <th>Vendedor<br><input type="text" class="form-control column_search" id="colSearch_vendedor"></th>
             <th>Valor receber<br><input type="text" class="form-control column_search" id="colSearch_valor_receber"></th>
             <th>Status<br><input type="text" class="form-control column_search" id="colSearch_status"></th>
+            <th>Data Liberação<br><input type="text" class="form-control column_search" id="colSearch_data_liberacao"></th>
             <th>Ações</th>
           </tr>
       </tfoot>

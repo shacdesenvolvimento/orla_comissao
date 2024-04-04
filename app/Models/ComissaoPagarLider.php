@@ -13,6 +13,7 @@ class ComissaoPagarLider extends Model
         'id_contrato',
         'id_lider',
         'valor_comissao_atual',
+        'data_liberacao',
         'status'
     ];
     public function lider(){

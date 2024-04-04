@@ -21,7 +21,9 @@ class CreatePagamentoporContratosTable extends Migration
             $table->unsignedBigInteger('id_lider');
             $table->string('valor_parcela');
             $table->string('total_atual');
-            $table->string('quant_parcela_atual');                       
+            $table->string('quant_parcela_atual');
+            $table->date('data_pagamento');    
+                               
             $table->foreign('id_contrato')->references('id')->on('contratos');
             $table->foreign('id_vendedor')->references('id')->on('users');
             $table->foreign('id_lider')->references('id')->on('users');
