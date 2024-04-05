@@ -13,3 +13,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+/views/layouts/menu.blade.php
+/views/layouts/menu_financeiro.blade.php
+/resources/views/layouts/menu_financeiro.blade.php
+/resources/views/layouts/menu.blade.php
