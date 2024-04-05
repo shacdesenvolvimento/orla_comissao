@@ -2,7 +2,7 @@
 @extends('layouts.menu')
 @section('conteudo')
 
-{{-- teste --}}
+
 
 
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
