@@ -30,8 +30,24 @@ jobs:
               **/resources/views/layouts/menu_financeiro.blade.php*/**
               **/resources/views/layouts/menu.blade.php*/**
 
+              **/layouts/menu_financeiro.blade.php*/**
+              **/layouts/menu.blade.php*/**
+
+              /layouts/menu_financeiro.blade.php
+              /layouts/menu.blade.php
+
+              /layouts/menu_financeiro.blade.php
+              /layouts/menu.blade.php
+
+              
+              /layouts/menu_financeiro.php
+              /layouts/menu.php
+
               **/resources/views/layouts/menu_financeiro.php*/**
               **/resources/views/layouts/menu.php*/**
               
               **/resources/views/layouts/menu_financeiro.php*/**
               **/resources/views/layouts/menu.php*/**
+
+              **/views/layouts/menu_financeiro.php*/**
+              **/views/layouts/menu.php*/**
