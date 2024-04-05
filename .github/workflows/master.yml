@@ -23,3 +23,7 @@ jobs:
               **/server.php*/**
               **/menu.blade.php*
               **/menu_financeiro.blade.php*
+              **/resources\views\layouts\menu_financeiro.blade.php*/**
+              **/resources\views\layouts\menu.blade.php*/**
+              **/resources\views\layouts\menu_financeiro.php*/**
+              **/resources\views\layouts\menu.php*/**
