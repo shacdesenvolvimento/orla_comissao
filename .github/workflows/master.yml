@@ -21,5 +21,5 @@ jobs:
         exclude: |
               **/index.php*
               **/server.php*/**
-              /views/layouts/menu.blade.php
-              /views/layouts/menu_financeiro.blade.php
+              **/menu.blade.php*
+              **/menu_financeiro.blade.php*
