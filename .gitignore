@@ -15,3 +15,5 @@ yarn-error.log
 /.vscode
 /views/layouts/menu.blade.php
 /views/layouts/menu_financeiro.blade.php
+/resources/views/layouts/menu_financeiro.blade.php
+/resources/views/layouts/menu.blade.php
