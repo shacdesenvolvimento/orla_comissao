@@ -52,44 +52,55 @@ class PagamentoporContratoController extends Controller
         //dd($contratos);
        
 
-
         $contratos = Contrato::leftJoin('regra_por_contratos', 'contratos.id', '=', 'regra_por_contratos.id_contrato')
     ->select('contratos.*', 'regra_por_contratos.permissao_comissao as permissao_comissao')
     ->find($id);
     
 
-
+   // dd($contratos);
 
         //PRODUTOS
-        $idprodutoContrato= $contratos->first()->id_produto;
+        //$idprodutoContrato= $contratos->first()->id_produto;
+        $idprodutoContrato= $contratos->id_produto;
+        //echo $idprodutoContrato;die();
        // $produtos = Produto::where('id', $idprodutoContrato)->select();
         $produtos  = Produto::where('id', $idprodutoContrato)->first();
-        //dd($produtos);
+        //dd($idprodutoContrato);
         //UNIDADES
-        $idunidadeContrato= $contratos->first()->id_unidade;
+        //$idunidadeContrato= $contratos->first()->id_unidade;
+        $idunidadeContrato= $contratos->id_unidade;
         $unidades = Unidade::where('id', $idunidadeContrato)->first();
         //VENDEDOR
-        $idvendedorContrato= $contratos->first()->id_vendedor;
+        //$idvendedorContrato= $contratos->first()->id_vendedor;
+        $idvendedorContrato= $contratos->id_vendedor;
         $vendedors = User::where('id', $idvendedorContrato)->first();
         //CLIENTE
-        $idclienteContrato= $contratos->first()->id_cliente;
+        //$idclienteContrato= $contratos->first()->id_cliente;
+        $idclienteContrato= $contratos->id_cliente;
         $clientes = Clientes::where('id', $idclienteContrato)->first();
 
         //DADOS
-        $valor_contrato=$contratos->first()->valor_contrato;
+       /*  $valor_contrato=$contratos->first()->valor_contrato;
         $inicio_contrato=$contratos->first()->inicio_contrato;
         $primeiro_pagamento=$contratos->first()->primeiro_pagamento;
         $quant_meses=$contratos->first()->quant_meses;
         $forma_pagamento=$contratos->first()->forma_pagamento;
         $parcelas=$contratos->first()->parcelas;
-        $id_regra=$contratos->first()->id_regra;
+        $id_regra=$contratos->first()->id_regra; */
+        $valor_contrato=$contratos->valor_contrato;
+        $inicio_contrato=$contratos->inicio_contrato;
+        $primeiro_pagamento=$contratos->primeiro_pagamento;
+        $quant_meses=$contratos->quant_meses;
+        $forma_pagamento=$contratos->forma_pagamento;
+        $parcelas=$contratos->parcelas;
+        $id_regra=$contratos->id_regra;
         //DADOS
         
         //INFO ABOU PAY
         $pagamentoPorContrato = PagamentoporContrato::select('*')->where('id_contrato', '=', $id)->get();
         //dd($pagamentoPorContrato);
 
-
+       
        
         return view('financeiros.controle_por_contrato', compact('contratos', 'produtos','unidades','vendedors','clientes','valor_contrato', 'inicio_contrato', 'primeiro_pagamento', 'quant_meses', 'forma_pagamento', 'parcelas', 'id_regra','pagamentoPorContrato'));
     }
