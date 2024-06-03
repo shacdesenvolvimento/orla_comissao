@@ -15,6 +15,7 @@ class ComissaoPagarLiderController extends Controller
     public function index()
     {
         $Pagarlider= ComissaoPagarLider::all();
+       // dd($Pagarlider);
         return view('financeiros.comissao_pagar_lider',compact('Pagarlider'));
     }
 
