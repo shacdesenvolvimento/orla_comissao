@@ -66,6 +66,17 @@ $teste='teste';
                   data-id="{{$item->id}}" 
                   data-nome="{{$item->nome}}"
                   data-id_regra="{{$item->id_regra}}"
+                  data-id_produto="{{$item->id_produto}}"
+
+                  data-id_unidade="{{$item->id_unidade}}"
+                  data-id_vendedor="{{$item->id_vendedor}}"
+                  data-id_cliente="{{$item->id_cliente}}"
+                  data-valor_contrato="{{$item->valor_contrato}}"
+                  data-inicio_contrato="{{$item->inicio_contrato}}"
+                  data-primeiro_pagamento="{{$item->primeiro_pagamento}}"
+                  data-quant_meses="{{$item->quant_meses}}"
+                  data-forma_pagamento="{{$item->forma_pagamento}}"
+                  data-parcelas="{{$item->parcelas}}"
 
 
 
@@ -248,7 +259,7 @@ $teste='teste';
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modalCenterTitle">
-            Novo contrato
+            Edita contrato
           </h5>
           <button
             type="button"
@@ -314,10 +325,8 @@ $teste='teste';
                 <input
                 type="date"
                 class="form-control"
-                id="nome"
-                name="nome"
-                placeholder="John Doe"
-                aria-label="John Doe"
+                id="inicio_contrato"
+                name="inicio_contrato"
                 aria-describedby="basic-icon-default-fullname2"
               />
                 
@@ -363,15 +372,44 @@ $teste='teste';
     <script>
       function funcao1(clickedButton)
       {
+        
         var id = $(clickedButton).data('id');
+        
         var nome = $(clickedButton).data('nome');
+
+        var id_produto= $(clickedButton).data('id_produto');
+        
         var id_regra = $(clickedButton).data('id_regra');
+
+
+        var id_unidade=$(clickedButton).data('id_unidade');
+        var id_vendedor=$(clickedButton).data('id_vendedor');
+        var id_cliente=$(clickedButton).data('id_cliente');
+        var valor_contrato=$(clickedButton).data('valor_contrato');
+        var inicio_contrato=$(clickedButton).data('inicio_contrato');
+        var primeiro_pagamento=$(clickedButton).data('primeiro_pagamento');
+        var quant_meses=$(clickedButton).data('quant_meses');
+        var forma_pagamento=$(clickedButton).data('forma_pagamento');
+        var parcelas=$(clickedButton).data('parcelas'); 
+
+
         
         $('#modalCenterEdit #id').val(id);
         $('#modalCenterEdit #nome').val(nome);
         $('#modalCenterEdit #regra').val(id_regra);
+        $('#modalCenterEdit #id_produto').val(id_produto);
 
 
+
+        $('#modalCenterEdit #id_unidade').val(id_unidade);
+        $('#modalCenterEdit #id_vendedor').val(id_vendedor);
+        $('#modalCenterEdit #id_cliente').val(id_cliente);
+        $('#modalCenterEdit #valor_contrato').val(valor_contrato);
+        $('#modalCenterEdit #inicio_contrato').val(inicio_contrato);
+        $('#modalCenterEdit #primeiro_pagamento').val(primeiro_pagamento);
+        $('#modalCenterEdit #quant_meses').val(quant_meses);
+        $('#modalCenterEdit #forma_pagamento').val(forma_pagamento);
+        $('#modalCenterEdit #parcelas').val(parcelas);
 
 
 
