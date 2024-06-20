@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+
 use App\Http\Controllers\CargoController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\ComissaoPagarVendedorController;
@@ -24,6 +26,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//LOGIN 
+Route::view('/login', 'login.login')->name('login');
+Route::post('/auth',[LoginController::class,'auth'])->name('login.auth');
+Route::get('/logout',[LoginController::class,'logout'])->name('login.logout');
+Route::middleware(['auth'])->group(function () {
+
+
 
 //CARGOS
 Route::get('/', [ContratoController::class,'inicio'])->name('inicio');
@@ -88,3 +98,4 @@ Route::post('/pagarvendedor/update',[ComissaoPagarVendedorController::class,'upd
 //CONTROLE LIDER
 Route::get('/pagarlider',[ComissaoPagarLiderController::class,'index'])->name('pagarlider');
 Route::post('/pagarlider/update',[ComissaoPagarLiderController::class,'update'])->name('pagarlider.update');
+});

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Clientes;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
@@ -15,6 +16,8 @@ class ClientesController extends Controller
     public function index()
     {
         $clientes= Clientes::all();
+
+        //Gate::authorize('acesso-restrito');
         return view('clientes.clientes',compact('clientes'));
     }
 

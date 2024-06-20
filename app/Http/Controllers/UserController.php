@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Cargo;
 use App\Models\VendedorPorLiderr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -58,7 +59,7 @@ class UserController extends Controller
                 'contato'=>$contato,
                 'id_cargo'=> $cargo,
                 'email'=> $email,
-                'password'=> $password,
+                'password' => Hash::make($request->password),
                 'perc_comissao'=> $perc_comissao,
             ]
         );
@@ -110,13 +111,13 @@ class UserController extends Controller
         $password= $request->input('password');
         $contato= $request->input('contato');
         $perc_comissao= $request->input('perc_comissao');
-
+        
         $funcionario= User::findOrFail($id);
 
         $funcionario->nome= $nome;
         $funcionario->id_cargo = $cargo;
         $funcionario->email= $email;
-        $funcionario->password= $password;
+        $funcionario->password= Hash::make($password);
         $funcionario->contato= $contato;
         $funcionario->perc_comissao= $perc_comissao;
 
