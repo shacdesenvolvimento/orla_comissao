@@ -37,7 +37,7 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('acesso-restritoFinanceiro', function ($user) {
             $authorizedEmails = [
-                'don@don.com.br','matheus.castro@orlario.com.vc','kelly@orlario.com.vc','guilherme@orlario.com.vc'
+                'don@don.com.br','matheus.castro@orlario.com.vc','kelly.gomes@orlario.com.vc','guilherme@orlario.com.vc'
             ];
 
             return in_array($user->email, $authorizedEmails);
